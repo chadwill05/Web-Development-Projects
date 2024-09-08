@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        
+        <link rel= "stylesheet" type="text/css" href="displaysite.css" media="screen">
+        
+        <link rel= "stylesheet" type= "text/css" href="printsite.css" media="print">
+        
+        <title>Paul Graham Homepage</title>
+        
+        <link rel="icon" href="Images/PaulGrahamLogo.jpg" type="image/gif" sizes="16x16">
+        
+        <style>
+            #listheader {
+                text-align: center;
+            }
+
+            #listitems {
+                display: inline-block;
+            }
+            
+            #listitems li {
+                margin-bottom: 5%;
+            }
+
+            #imgcenter {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+        
+    </head>
+    
+        <body>
+            
+            <div id="container">
+                
+            <header>
+                <img src="Images/PaulGrahamLogo.jpg" alt="Picture of Paul Graham" id="headerLogo" width="120" height="120">
+                
+                <h1>Paul Graham</h1>
+            
+            </header>
+            
+            <hr style="margin:0; border: solid 1px black">
+            
+            <nav>
+                <ul>
+                    
+                    <li> <!-- Home -->
+                        <hr>
+                        <div>
+                            <a href="index.html">Home</a>
+                            <a href="index.html"><img src="Images/homeLogo.png" height="60" width="60" alt="Home Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- Books -->
+                        <div>
+                        <a href="PG_Books.html">Books</a>
+                        <a href="PG_Books.html"><img src="Images/booksLogo.png" height="60" width="55" style="position:relative; left:2%" alt="Books Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- Arc -->
+                        <div>
+                        <a href="PG_Arc.html">Arc</a>
+                        <a href="PG_Arc.html"><img src="Images/arcLogo.png" height="60" width="60" alt="Arc Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- Q and A's -->
+                        <div>
+                        <a href="PG_QandA.html">Q&amp;A's</a>
+                        <a href="PG_QandA.html"><img src="Images/qandaLogo.png" height="60" width="60" alt="Q&A Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    
+                    <li> <!-- Quotes -->
+                        <div>
+                        <a href="PG_Quotes.html">Quotes</a>
+                        <a href="PG_Quotes.html"><img src="Images/quotesLogo.png" height="60" width="60" alt="Quotes Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    
+                    <li> <!-- Spam -->
+                        <div>
+                        <a href="PG_Spam.html">Spam</a>
+                        <a href="PG_Spam.html"><img src="Images/spamLogo.png" height="60" width="60" alt="Spam Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- YC -->
+                        <div>
+                        <a href="PG_YC.html">YC</a>
+                        <a href="PG_YC.html"><img src="Images/ycLogo.png" height="60" width="60" style="position:relative; right:1%; border: 2px solid #336699" alt="Y Combinator Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+        
+                </ul>
+            </nav>
+            
+            <main>
+                <h1> Take the Arc Challenge </h1>
+                
+                <p>February 2008</p>
+                
+                <p>Arc's been out for a few days now. Everyone seems to have an opinion about it. The low end are much the same as the low end of opinions about anything online. There's no high end yet, because no one has had enough time yet to be able to speak from experience about what it's like to program in Arc. Those are the responses I'm really interested in. But in the meantime, we have the medium-level responses: the opinions of people who have some understanding of the issues involved, but who are writing based on first impressions.</p>
+                
+                <p>I've noticed a strange pattern in these. The main fault they find with Arc is that I don't seem to have had to work hard enough writing it. Ron Garret writes:</p>
+                
+                <blockquote>And that is my main gripe about Arc: it has been so long in the making and set such lofty goals and then it seems to pretty much punt on all the hard problems of language design.</blockquote>
+                
+                <p>I don't usually refute criticisms directly. Refutations tend to be more gratifying to write than to read. But in this case I'm going to, because in this case Ron & Co are mistaken in an illuminating way. Explaining why will clarify some important issues about language design.
+                </p>
+                
+                <p>Ron's right. I didn't decide what problems to work on based on how hard they were. Instead I used what might seem a rather mundane test: I worked on things that would make programs shorter.</p>
+                
+                <p>Why would I do that? Because making programs short is what high level languages are for. It may not be 100% accurate to say the power of a programming language is in inverse proportion to the length of programs written in it, but it's damned close. Imagine how preposterous it would sound if someone said "The program is 10 lines of code in your language and 50 in my language, but my language is more powerful." You'd be thinking: what does he mean by power, then?</p>
+                
+                <p>I'm not claiming that power is the only criterion by which to judge programming languages. It would also be a legitimate goal, for example, to design a language to be easy for kids to learn, or to compile efficiently (though this is less common than it used to be), or to limit the damage that can be done by individual bad programmers within a group. But power is the test of languages not designed for such special purposes.</p>
+                
+                <p>So working on what makes programs short rather than what's hard to implement translates to:</p>
+                
+                <blockquote>I chose what to work on based on the value to the user, rather than the cost to me.</blockquote>
+                
+                <p>Surely this is the right order of priorities to have in designing not just programming languages, but anything meant to be used by other people.</p>
+                
+                <p>This is not to say none of the stuff I did was hard. Some of it seemed hard to me. But in language design, solving problems, whether hard or easy, is not the goal. Making a good language is. The real test of Arc—and any other general-purpose high level language—is not whether it contains feature x or solves problem y, but <i>how long programs are in it.</i></p>
+                <hr>
+            
+                <footer>
+                        Contact Paul
+                        <div>
+                            <p><a href="https://twitter.com/paulg">Twitter</a></p>
+                        </div>
+                        <div>
+                            <p><a href="https://www.amazon.com/Paul-Graham/e/B001ILHE5O%3Fref=dbs_a_mng_rwt_scns_share">Amazon</a></p>
+                        </div>
+                        <div>
+                            <p><a href="mailto:pg@ycombinator.com">E-Mail</a></p>
+                        </div>
+                    
+                    Copyright &copy; Paul Graham  Last Updated on 4/24/2019
+                </footer>
+                
+                </main>
+            
+            </div>
+        </body>
+    
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        
+        <link rel= "stylesheet" type="text/css" href="displaysite.css" media="screen">
+        
+        <link rel= "stylesheet" type= "text/css" href="printsite.css" media="print">
+        
+        <title>Paul Graham Homepage</title>
+        
+        <link rel="icon" href="Images/PaulGrahamLogo.jpg" type="image/gif" sizes="16x16">
+        
+        <style>
+            #listheader {
+                text-align: center;
+            }
+
+            #listitems {
+                display: inline-block;
+            }
+            
+            #listitems li {
+                margin-bottom: 5%;
+            }
+
+            #imgcenter {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+        
+    </head>
+    
+        <body>
+            
+            <div id="container">
+                
+            <header>
+                <img src="Images/PaulGrahamLogo.jpg" alt="Picture of Paul Graham" id="headerLogo" width="120" height="120">
+                
+                <h1>Paul Graham</h1>
+            
+            </header>
+            
+            <hr style="margin:0; border: solid 1px black">
+            
+            <nav>
+                <ul>
+                    
+                    <li> <!-- Home -->
+                        <hr>
+                        <div>
+                            <a href="index.html">Home</a>
+                            <a href="index.html"><img src="Images/homeLogo.png" height="60" width="60" alt="Home Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- Books -->
+                        <div>
+                        <a href="PG_Books.html">Books</a>
+                        <a href="PG_Books.html"><img src="Images/booksLogo.png" height="60" width="55" style="position:relative; left:2%" alt="Books Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- Arc -->
+                        <div>
+                        <a href="PG_Arc.html">Arc</a>
+                        <a href="PG_Arc.html"><img src="Images/arcLogo.png" height="60" width="60" alt="Arc Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- Q and A's -->
+                        <div>
+                        <a href="PG_QandA.html">Q&amp;A's</a>
+                        <a href="PG_QandA.html"><img src="Images/qandaLogo.png" height="60" width="60" alt="Q&A Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    
+                    <li> <!-- Quotes -->
+                        <div>
+                        <a href="PG_Quotes.html">Quotes</a>
+                        <a href="PG_Quotes.html"><img src="Images/quotesLogo.png" height="60" width="60" alt="Quotes Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    
+                    <li> <!-- Spam -->
+                        <div>
+                        <a href="PG_Spam.html">Spam</a>
+                        <a href="PG_Spam.html"><img src="Images/spamLogo.png" height="60" width="60" alt="Spam Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- YC -->
+                        <div>
+                        <a href="PG_YC.html">YC</a>
+                        <a href="PG_YC.html"><img src="Images/ycLogo.png" height="60" width="60" style="position:relative; right:1%; border: 2px solid #336699" alt="Y Combinator Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+        
+                </ul>
+            </nav>
+            
+            <main>
+                <h1>Micheal Vanier: LFM and LFSP</h1>
+                
+                <p>(This is from an email sent by Mike Vanier. It is such a well-written description of the problems hackers face that I thought everyone should see it.)</p>
+                
+                <p>My Ph.D. research involved writing very complex simulations of nervous systems. I used a simulation package that was written in C and had its own scripting language, all written in-house. I extended the hell out of it, but the experience was so painful I don't think I can ever work on a large C project again.</p>
+                
+                <p>Since I want to continue working in this field, and since I love to hack, I want to re-write the simulator "the right way". However, I've been dithering on the choice of language. It's pretty clear that the core simulation objects have to be written in C++. C is too painful, and anything else is going to give an unacceptable hit in speed (simulation is one of those rare fields where it is impossible to have too much speed). But this is probably less than 50% of the code, maybe much less. The rest is infrastructure; scripting interface as well as a lot of support code.</p>
+                
+                <p>For scripting I want to use Scheme or some Lisp dialect. But the language choice for infrastructure is unclear. I could use C++, but that's unnecessarily painful especially since the infrastructure is not speed-critical. So I'd decided to use Java; it's fast enough, there are a lot of libraries, and a lot of people know it so I could conceivably get others to work on it as well. After making this decision, my interest waned and I started another (unrelated) project.</p>
+                
+                <p>In the process of working on that other project (which involves Scheme and Objective Caml (Ocaml), an ML dialect), it occurred to me that Ocaml would be a better choice than Java for the intermediate layer. It's faster, has better type-checking, is much more powerful, and can even be used as its own scripting language because of the type inference and interactive REPL. If necessary, I could write a simple Lisp-like language on top of Ocaml with little difficulty. The C interface to Ocaml is also quite mature, and there is a good-sized standard library (though nothing like the enormous Java libraries). Also, it's much lighter weight than Java. But here is the most important reason: it's a hell of a lot more fun to program in than Java.
+                </p>
+                
+                <p>Writing Java code, though not particulary painful in the sense that C is painful (core dumps etc.), puts me to sleep. Writing Ocaml (which is a "language designed for smart people" if there ever was one) is exciting. My motivation to tackle the project has tripled overnight. The interesting question is: why is Ocaml so much more fun than Java? Why are "languages designed for smart people" (LFSPs) so much more fun to program in than "languages designed for the masses" (LFMs)?</p>
+                
+                <p>One possibility is that LFSPs tend to be more unusual, and hence are more novel. I'll admit that this is part of the answer, but it misses the main point. Any new language is going to be novel, but the novelty usually wears off quickly. The real point is that LFSPs have a much greater support for abstraction, and in particular for defining your own abstractions, than LFMs.
+                </p>
+                
+                <p>This is not accidental; LFMs deliberately restrict the abstractive power of the language, because of the feeling that users "can't handle" that much power. This means that there is a glass ceiling of abstraction; your designs can only get this abstract and no more. This is reassuring to Joe Average, because he knows that he isn't going to see any code he can't understand. It is reassuring to Joe Boss, because he knows that he can always fire you and hire another programmer to maintain and extend your code. But it is incredibly frustrating to Joe Wizard Hacker, because he knows that his design can be made N times more general and more abstract but the language forces him to do the Same Old Thing again and again.</p>
+                
+                <hr>
+            
+                <footer>
+                        Contact Paul
+                        <div>
+                            <p><a href="https://twitter.com/paulg">Twitter</a></p>
+                        </div>
+                        <div>
+                            <p><a href="https://www.amazon.com/Paul-Graham/e/B001ILHE5O%3Fref=dbs_a_mng_rwt_scns_share">Amazon</a></p>
+                        </div>
+                        <div>
+                            <p><a href="mailto:pg@ycombinator.com">E-Mail</a></p>
+                        </div>
+                    
+                    Copyright &copy; Paul Graham  Last Updated on 4/24/2019
+                </footer>
+                
+                </main>
+            
+            </div>
+        </body>
+    
+</html>

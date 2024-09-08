@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        
+        <link rel= "stylesheet" type="text/css" href="displaysite.css" media="screen">
+        
+        <link rel= "stylesheet" type= "text/css" href="printsite.css" media="print">
+        
+        <title>Paul Graham Homepage</title>
+        
+        <link rel="icon" href="Images/PaulGrahamLogo.jpg" type="image/gif" sizes="16x16">
+        
+        <style>
+            #listheader {
+                text-align: center;
+            }
+
+            #listitems {
+                display: inline-block;
+            }
+            
+            #listitems li {
+                margin-bottom: 5%;
+            }
+
+            #imgcenter {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+        
+    </head>
+    
+        <body>
+            
+            <div id="container">
+                
+            <header>
+                <img src="Images/PaulGrahamLogo.jpg" alt="Picture of Paul Graham" id="headerLogo" width="120" height="120">
+                
+                <h1>Paul Graham</h1>
+            
+            </header>
+            
+            <hr style="margin:0; border: solid 1px black">
+            
+            <nav>
+                <ul>
+                    
+                    <li> <!-- Home -->
+                        <hr>
+                        <div>
+                            <a href="index.html">Home</a>
+                            <a href="index.html"><img src="Images/homeLogo.png" height="60" width="60" alt="Home Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- Books -->
+                        <div>
+                        <a href="PG_Books.html">Books</a>
+                        <a href="PG_Books.html"><img src="Images/booksLogo.png" height="60" width="55" style="position:relative; left:2%" alt="Books Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- Arc -->
+                        <div>
+                        <a href="PG_Arc.html">Arc</a>
+                        <a href="PG_Arc.html"><img src="Images/arcLogo.png" height="60" width="60" alt="Arc Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- Q and A's -->
+                        <div>
+                        <a href="PG_QandA.html">Q&amp;A's</a>
+                        <a href="PG_QandA.html"><img src="Images/qandaLogo.png" height="60" width="60" alt="Q&A Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    
+                    <li> <!-- Quotes -->
+                        <div>
+                        <a href="PG_Quotes.html">Quotes</a>
+                        <a href="PG_Quotes.html"><img src="Images/quotesLogo.png" height="60" width="60" alt="Quotes Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    
+                    <li> <!-- Spam -->
+                        <div>
+                        <a href="PG_Spam.html">Spam</a>
+                        <a href="PG_Spam.html"><img src="Images/spamLogo.png" height="60" width="60" alt="Spam Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- YC -->
+                        <div>
+                        <a href="PG_YC.html">YC</a>
+                        <a href="PG_YC.html"><img src="Images/ycLogo.png" height="60" width="60" style="position:relative; right:1%; border: 2px solid #336699" alt="Y Combinator Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+        
+                </ul>
+            </nav>
+            
+            <main>
+                <h1> Old Arc > Arc Lessons</h1>
+                
+                <p>We want Arc to be good for writing programs, and one way to ensure that is to start writing programs while the language is still malleable. In the process we've learned a few lessons.</p>
+                
+                <h3>Shorter names are a big win.</h3>
+                
+                <p>Shorter operator names sounds like a pretty superficial feature. Maybe so, but it has a noticeable effect on code. Shorter names mean you don't have to break lines so often, which in turn means that you can see more of your program at once. It feels significantly better to program in Arc.</p>
+                
+                <p>The biggest win is in the names of operators that tend to be outermost in nested expressions, like do (progn), map (mapcar), and fn (lambda). Those are the ones that send your code shooting toward the right margin.</p>
+                
+                <p>It's worth spending time to come up with good, short names for commonly used operators. I have a couple principles. One is that you only need to remember what a name means, not guess what it means on first sight. And the more often something is used, the less mnemonic it needs to be. Examples: +, -, *, /, which are truly arbitrary.</p>
+                
+                <p>Replacing setf with = has turned out to make code significantly easier to read, not just because = is shorter, but also because the odd shape of = makes it clear that an assignment is no ordinary function call.</p>
+                
+                <h3>Using + to concatenate sequences is a lose.</h3>
+                
+                <p>This kind of overloading is just a pun. I found that it actually made programs harder to read, not easier, because I kept thinking I was looking at math code when I wasn't.</p>
+                
+                <p>As several people have pointed out, concatenation isn't addition. It's not commutative, for example. Ok, you were right; we're tossing it.</p>
+                
+                <h3>In general, overloading is complicated question</h3>
+                
+                <p>My guess is that it's no coincidence that people always use a few operators in examples of overloading, just as it's no coincidence they always use fibonacci in examples of the dangers of naive recursive algorithms. It may be there are only a few operators you tend to want to overload, and that that's because there is something special about them, not because overloading in general is the right idea.</p>
+                
+                <p>I consider this not merely an open question, but one that probably hasn't even been properly formulated yet. My intuition is that we'd be missing the real question, whatever it is, if we considered it a matter of "supports overloading" being an item on a checklist.</p>
+                
+                <p>Perhaps it should be subsumed in the more general question, how should you define a new type?</p>
+                
+                <h3>Implicit local variables conflict with macros.</h3>
+                
+                <p>In previous Lisps if you wanted to create a local variable you had to do it explicitly with a let. In Arc we were planning to let users declare local variables implicitly, just by assigning values to them. This turns out not to work, and the problem comes from an unforeseen quarter: macros.
+                </p>
+                
+                <p>If you're going to declare local variables implicitly, you have to decide what the scope of the new variable will be. We decided we would make new variables local to blocks: a local variable created implicitly by assignment would have a scope that extended to the nearest enclosing do (Arc's progn).</p>
+                
+                <p>Technically it can be made to work. We wrote a hideously complicated interpreter that allowed local variables to be declared this way. The ugliness of this code worried me: ugly things are generally a bad idea. But we tried to keep this feature in the hope it would make programs shorter.</p>
+                
+                <p>What convinced us to toss it was not a technical problem but a social one. In a language with implicit local variables and macros, you're always tripping over unexpected lexical contours. You don't want to create new lexical contours without announcing it. But a lot of macros that don't look like blocks in the call expand into blocks. So we provided a second block operator, called justdo, which was like do but didn't create a new lexical contour (i.e. it is Common Lisp progn), and this is what you were supposed to use in macroexpansions.</p>
+                
+                <p>The trouble was, I kept forgetting and using do instead. And I was thereby writing utilities with the worst sort of bug: the kind that might not show up for years, and only then in someone else's code.</p>
+                
+                <p>It seemed to us a bad idea to have a feature so fragile that its own implementors couldn't use it properly. So no more implicit local variables.</p>
+                
+                <p>This problem is not limited to Lisp. Macros and implicit local variables just don't seem to work well together. Meaning that any language that already has implicit local variables will run into trouble if they try to add macros.
+                </p>
+                <hr>
+            
+                <footer>
+                        Contact Paul
+                        <div>
+                            <p><a href="https://twitter.com/paulg">Twitter</a></p>
+                        </div>
+                        <div>
+                            <p><a href="https://www.amazon.com/Paul-Graham/e/B001ILHE5O%3Fref=dbs_a_mng_rwt_scns_share">Amazon</a></p>
+                        </div>
+                        <div>
+                            <p><a href="mailto:pg@ycombinator.com">E-Mail</a></p>
+                        </div>
+                    
+                    Copyright &copy; Paul Graham  Last Updated on 4/24/2019
+                </footer>
+                
+                </main>
+            
+            </div>
+        </body>
+    
+</html>

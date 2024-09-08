@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        
+        <link rel= "stylesheet" type="text/css" href="displaysite.css" media="screen">
+        
+        <link rel= "stylesheet" type= "text/css" href="printsite.css" media="print">
+        
+        <title>Paul Graham Homepage</title>
+        
+        <link rel="icon" href="Images/PaulGrahamLogo.jpg" type="image/gif" sizes="16x16">
+        
+        <style>
+            #listheader {
+                text-align: center;
+            }
+
+            #listitems {
+                display: inline-block;
+            }
+            
+            #listitems li {
+                margin-bottom: 5%;
+            }
+
+            #imgcenter {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+        
+    </head>
+    
+        <body>
+            
+            <div id="container">
+                
+            <header>
+                <img src="Images/PaulGrahamLogo.jpg" alt="Picture of Paul Graham" id="headerLogo" width="120" height="120">
+                
+                <h1>Paul Graham</h1>
+            
+            </header>
+            
+            <hr style="margin:0; border: solid 1px black">
+            
+            <nav>
+                <ul>
+                    
+                    <li> <!-- Home -->
+                        <hr>
+                        <div>
+                            <a href="index.html">Home</a>
+                            <a href="index.html"><img src="Images/homeLogo.png" height="60" width="60" alt="Home Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- Books -->
+                        <div>
+                        <a href="PG_Books.html">Books</a>
+                        <a href="PG_Books.html"><img src="Images/booksLogo.png" height="60" width="55" style="position:relative; left:2%" alt="Books Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- Arc -->
+                        <div>
+                        <a href="PG_Arc.html">Arc</a>
+                        <a href="PG_Arc.html"><img src="Images/arcLogo.png" height="60" width="60" alt="Arc Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- Q and A's -->
+                        <div>
+                        <a href="PG_QandA.html">Q&amp;A's</a>
+                        <a href="PG_QandA.html"><img src="Images/qandaLogo.png" height="60" width="60" alt="Q&A Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    
+                    <li> <!-- Quotes -->
+                        <div>
+                        <a href="PG_Quotes.html">Quotes</a>
+                        <a href="PG_Quotes.html"><img src="Images/quotesLogo.png" height="60" width="60" alt="Quotes Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    
+                    <li> <!-- Spam -->
+                        <div>
+                        <a href="PG_Spam.html">Spam</a>
+                        <a href="PG_Spam.html"><img src="Images/spamLogo.png" height="60" width="60" alt="Spam Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- YC -->
+                        <div>
+                        <a href="PG_YC.html">YC</a>
+                        <a href="PG_YC.html"><img src="Images/ycLogo.png" height="60" width="60" style="position:relative; right:1%; border: 2px solid #336699" alt="Y Combinator Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+        
+                </ul>
+            </nav>
+            
+            <main>
+                <img src="Images/hundredYearLanguage.jpg" alt="Hundred Year Language">
+                
+                <h1>The Hundred-Year Language</h1>
+                
+                <p>April 2003</p>
+                
+                <p>
+(This essay is derived from a keynote talk at PyCon 2003.) </p>
+                
+                <p>It's hard to predict what life will be like in a hundred years. There are only a few things we can say with certainty. We know that everyone will drive flying cars, that zoning laws will be relaxed to allow buildings hundreds of stories tall, that it will be dark most of the time, and that women will all be trained in the martial arts. Here I want to zoom in on one detail of this picture. What kind of programming language will they use to write the software controlling those flying cars?</p>
+                
+                <p>This is worth thinking about not so much because we'll actually get to use these languages as because, if we're lucky, we'll use languages on the path from this point to that.
+                </p>
+                
+                <p>I think that, like species, languages will form evolutionary trees, with dead-ends branching off all over. We can see this happening already. Cobol, for all its sometime popularity, does not seem to have any intellectual descendants. It is an evolutionary dead-end-- a Neanderthal language.</p>
+                
+                <p>I predict a similar fate for Java. People sometimes send me mail saying, "How can you say that Java won't turn out to be a successful language? It's already a successful language." And I admit that it is, if you measure success by shelf space taken up by books on it (particularly individual books on it), or by the number of undergrads who believe they have to learn it to get a job. When I say Java won't turn out to be a successful language, I mean something more specific: that Java will turn out to be an evolutionary dead-end, like Cobol.</p>
+                
+                <p>This is just a guess. I may be wrong. My point here is not to dis Java, but to raise the issue of evolutionary trees and get people asking, where on the tree is language X? The reason to ask this question isn't just so that our ghosts can say, in a hundred years, I told you so. It's because staying close to the main branches is a useful heuristic for finding languages that will be good to program in now.
+                </p>
+                
+                <p>At any given time, you're probably happiest on the main branches of an evolutionary tree. Even when there were still plenty of Neanderthals, it must have sucked to be one. The Cro-Magnons would have been constantly coming over and beating you up and stealing your food.</p>
+                
+                <p>The reason I want to know what languages will be like in a hundred years is so that I know what branch of the tree to bet on now.
+                </p>
+                
+                <p>The evolution of languages differs from the evolution of species because branches can converge. The Fortran branch, for example, seems to be merging with the descendants of Algol. In theory this is possible for species too, but it's not likely to have happened to any bigger than a cell.</p>
+                
+                <p>Convergence is more likely for languages partly because the space of possibilities is smaller, and partly because mutations are not random. Language designers deliberately incorporate ideas from other languages.
+                </p>
+                
+                <p>It's especially useful for language designers to think about where the evolution of programming languages is likely to lead, because they can steer accordingly. In that case, "stay on a main branch" becomes more than a way to choose a good language. It becomes a heuristic for making the right decisions about language design.</p>
+                
+                <hr>
+            
+                <footer>
+                        Contact Paul
+                        <div>
+                            <p><a href="https://twitter.com/paulg">Twitter</a></p>
+                        </div>
+                        <div>
+                            <p><a href="https://www.amazon.com/Paul-Graham/e/B001ILHE5O%3Fref=dbs_a_mng_rwt_scns_share">Amazon</a></p>
+                        </div>
+                        <div>
+                            <p><a href="mailto:pg@ycombinator.com">E-Mail</a></p>
+                        </div>
+                    
+                    Copyright &copy; Paul Graham  Last Updated on 4/24/2019
+                </footer>
+                
+                </main>
+            
+            </div>
+        </body>
+    
+</html>

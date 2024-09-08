@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        
+        <link rel= "stylesheet" type="text/css" href="displaysite.css" media="screen">
+        
+        <link rel= "stylesheet" type= "text/css" href="printsite.css" media="print">
+        
+        <title>Paul Graham Homepage</title>
+        
+        <link rel=icon href="Images/PaulGrahamLogo.jpg" type="image/gif" sizes="16x16">
+        
+    </head>
+    
+    <div id="container">
+        <body>
+            <header role="banner">
+                <img src="Images/PaulGrahamLogo.jpg" alt="Picture of Paul Graham" id="headerLogo" width="120" height="120">
+                
+                <h1>Paul Graham</h1>
+                
+                <a href="https://twitter.com/paulg" id="headerTwitterLogo"><img src="Images/twitterLogo.png" width="45" height="45"></a>
+                
+            </header>
+            
+            <hr style="margin:0; border: solid 1px black">
+            
+            <nav role="navigation">
+                <ul>
+                    <hr>
+                    
+                    <li> <!-- Home -->
+                        <div>
+                            <a href="PG_Homepage.html">Home</a>
+                            <a href="PG_Homepage.html"><img src="Images/homeLogo.png" height="60" width="60"></a>
+                        </div>
+                    </li>
+                    
+                    <hr>
+                    
+                    <li> <!-- Books -->
+                        <div>
+                        <a href="PG_Books.html">Books</a>
+                        <a href="PG_Books.html"><img src="Images/booksLogo.png" height="60" width="55" style="position:relative; left:2%"></a>
+                        </div>
+                    </li>
+                    
+                    <hr>
+                    
+                    <li> <!-- Arc -->
+                        <div>
+                        <a href="PG_Arc.html">Arc</a>
+                        <a href="PG_Arc.html"><img src="Images/arcLogo.png" height="60" width="60"></a>
+                        </div>
+                    </li>
+                    
+                    <hr>
+                    
+                    <li> <!-- Q and A's -->
+                        <div>
+                        <a href="PG_QandA.html">Q&amp;A's</a>
+                        <a href="PG_QandA.html"><img src="Images/qandaLogo.png" height="60" width="60"></a>
+                        </div>
+                    </li>
+                    
+                    <hr>
+                    
+                    <li> <!-- Quotes -->
+                        <div>
+                        <a href="PG_Quotes.html">Quotes</a>
+                        <a href="PG_Quotes.html"><img src="Images/quotesLogo.png" height="60" width="60"></a>
+                        </div>
+                    </li>
+                    
+                    <hr>
+                    
+                    <li> <!-- Spam -->
+                        <div>
+                        <a href="PG_Spam.html">Spam</a>
+                        <a href="PG_Spam.html"><img src="Images/spamLogo.png" height="60" width="60"></a>
+                        </div>
+                    </li>
+                    
+                    <hr>
+                    
+                    <li> <!-- YC -->
+                        <div>
+                        <a href="PG_YC.html">YC</a>
+                        <a href="PG_YC.html"><img src="Images/ycLogo.png" height="60" width="60" style="position:relative; right:1%; border: 2px solid #336699"></a>
+                        </div>
+                    </li>
+                    
+                    <hr>
+                    
+                    
+                </ul>
+            </nav>
+            
+            <aside role ="complementary">
+
+            </aside>
+            
+            <main role="main">
+                
+                <h1 id="top">Lisp Language</h1>
+                
+                <p>
+                    Below you'll find specific questions regarding the programming language Lisp. Enjoy!
+                </p>
+                <ul>
+                    <li>
+                        <a href="#what">What is Lisp?</a>
+                    </li>
+                    
+                    <li>
+                        <a href="#how">How can I learn Lisp?</a>
+                    </li>
+                    
+                    <li>
+                        <a href="#which">Which should I learn, Common Lisp or Scheme? What's the difference?</a>
+                    </li>
+                      
+                    <li>
+                        <a href="#free">Do you know a good, free Lisp implementation?</a>
+                    </li>
+                    
+                     <li>
+                        <a href="#book">Can you recommend a book for someone who wants to learn Lisp?</a>
+                    </li>
+                     
+                    <li>
+                        <a href="#tutorial">Is there a good online tutorial for Lisp?</a>
+                    </li>
+                     
+                    <li>
+                        <a href="#copy">Where can I get a copy of <i>On Lisp</i>?</a>
+                    </li>
+                    
+                    <li>
+                        <a href="#solutions">Is there a set of solutions to the problems in <i>ANSI Common Lisp</i>?</a>
+                    </li>
+                    
+                    <li>
+                        <a href="#ml">What do you think of ML and its derivatives?</a>
+                    </li>
+                    
+                    <li>
+                        <a href="#perl">Couldn't you add something equivalent to Lisp macros to languages like Perl or Python?</a>
+                    </li>
+                    
+                    <li>
+                        <a href="#auto">Do you know anyone who does AutoLisp consulting?</a>
+                    </li>
+                </ul>
+                <hr>
+                
+                <h3 id="what">What is Lisp?</h3>
+                
+                <p>
+                    Lisp is a family of programming languages descended from a language John McCarthy invented (or more accurately, discovered) in the late 1950s. The two main dialects now are Common Lisp and Scheme. There's a new dialect called Arc that is also available.
+                </p>
+                <a href="#top"> Back to top </a>
+                <hr>
+                
+                <h3 id="how">How can I learn Lisp?</h3>
+                
+                <p>
+                    The way to learn any language is to write programs in it. You have two main dialects to choose between: Scheme and Common Lisp. They each have advantages and disadvantages, but the differences between them are tiny compared to the differences between them and other languages, so if you want to start learning Lisp, it doesn't matter which you choose.
+                    <br>
+                    <br>
+                    There are good books about both dialects, and many good free implementations. So get a book and an implementation, and start trying to write programs. Read existing source code to get an idea of Lisp style. If you run into trouble, ask on comp.lang.lisp. People there are always willing to help newbies.
+                </p>
+                <a href="#top"> Back to top </a>
+                <hr>
+                
+                <h3 id="which">Which should I learn, Common Lisp or Scheme? What's the difference?</h3>
+                
+                <p>
+                    Common Lisp is powerful but ugly. Scheme is small and clean, but the standard only defines the inner core of the language. If I had to deliver an application I'd probably use Common Lisp; if I were teaching a course I might use Scheme (but with Common Lisp macros).
+                </p>
+                <a href="#top"> Back to top </a>
+                <hr>
+                
+                <h3 id="free">Do you know a good, free Lisp implementation?</h3>
+                
+                <p>
+                    There are several.
+                    <br>
+                    <br>
+                    The Common Lisp implementation I use is <a href="http://clisp.sourceforge.net">Clisp</a>, but <a href="http://www.cons.org/cmucl/">CMUCL</a> is also well-regarded. 
+                    <br>
+                    <br>
+                    For Scheme hacking I use <a href="http://www.s48.org">Scheme 48</a> and <a href="http://www.plt-scheme.org">PLT Scheme</a>.
+                </p>
+                <a href="#top"> Back to top </a>
+                <hr>
+                    
+                <h3 id="book">Can you recommend a book for someone who wants to learn Lisp?</h3>
+                
+                <p>
+                    You might like <a href="http://www.amazon.com/exec/obidos/ASIN/0133708756">this one</a>.
+                </p>
+                <a href="#top"> Back to top </a>
+                <hr>
+                    
+                <h3 id="tutorial">Is there a good online tutorial for Lisp?</h3>
+                
+                <p>
+                    Start with <a href="http://lib.store.yahoo.net/lib/paulgraham/acl2.txt">Chapter 2</a> of Ansi Common Lisp, which is a brief introduction to Lisp programming.
+                    <br>
+                    <br>For more detail, see the Common Lisp <a href="http://www-2.cs.cmu.edu/afs/cs.cmu.edu/project/ai-repository/ai/html/cltl/cltl2.html">reference manual</a>.
+                </p>
+                <a href="#top"> Back to top </a>
+                <hr>
+                
+                <h3 id="copy">Where can I get a copy of <i>On Lisp</i>?</h3>
+                
+                <p>
+                    Thanks to Chip Coldwell, you can now get a Postscript file of it online.
+                    <br>
+                    <br>
+                    It looks as if the book is going to be in print again soon, but if you are determined to have a valuable first edition, you can get a used copy at <a href="http://www.amazon.com/exec/obidos/tg/stores/offering/list/-/0130305529">Amazon</a>.
+                </p>
+                <a href="#top"> Back to top </a>
+                <hr>
+                
+                <h3>Is there a second edition of <i>ANSI Common Lisp</i>?</h3>
+                
+                <p>
+                    Some databases say that there is, but there isn't; not yet at least.
+                </p>
+                <a href="#top"> Back to top </a>
+                <hr>
+                    
+                <h3 id="solutions">Is there a set of solutions to the problems in <i>ANSI Common Lisp</i>?</h3>
+                
+                <p>
+                    Unfortunately not. I was supposed to write one, but we started Viaweb right after the book went to press, and I never got around to it.
+                </p>
+                <a href="#top"> Back to top </a>
+                <hr>
+                
+                <h3 id="ml">What do you think of ML and its derivatives?</h3>
+                
+                <p>
+                    Most hackers I know have been disappointed by the ML family. Languages with static typing would be more suitable if programs were something you thought of in advance, and then merely translated into code. But that's not how programs get written.
+                    <br>
+                    <br>
+                    The inability to have lists of mixed types is a particularly crippling restriction. It gets in the way of exploratory programming (it's convenient early on to represent everything as lists), and it means you can't have real macros.
+                </p>
+                <a href="#top"> Back to top </a>
+                <hr>
+                
+                <h3 id="perl">Couldn't you add something equivalent to Lisp macros to languages like Perl or Python?</h3>
+                <p>
+                    Not without turning them into dialects of Lisp. Real macros need to operate on the parse tree of the program. To allow that in a language with syntax, you have to (a) make public the translation from source code to parse trees, and (b) give the programmer the opportunity to run programs on parse trees before they go on to the compiler.
+                    <br>
+                    <br>
+                    But it would be hard to do that without creating a notation for parse trees; and once you do, your language has become a skin on Lisp, in much the same way that in OS X, the Mac OS became a skin on Unix.
+                </p>
+                <a href="#top"> Back to top </a>
+                <hr>
+                
+                <h3 id="auto">Do you know anyone who does AutoLisp consulting?</h3>
+                
+                <p>
+                    No, but <a href="http://www.google.com/search?q=autolisp+consulting">Google</a> does.
+                </p>
+                <a href="#top"> Back to top </a>
+                <hr>
+                
+                <footer role="contentinfo"><br>Copyright &copy; Paul Graham <br> Last Updated on 3/25/2019</footer>
+                
+            </main>
+            
+        </body>
+        
+    </div>
+    
+</html>

@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        
+        <link rel= "stylesheet" type="text/css" href="displaysite.css" media="screen">
+        
+        <link rel= "stylesheet" type= "text/css" href="printsite.css" media="print">
+        
+        <title>Paul Graham Homepage</title>
+        
+        <link rel="icon" href="Images/PaulGrahamLogo.jpg" type="image/gif" sizes="16x16">
+        
+    </head>
+    
+        <body>
+            
+            <div id="container">
+                
+            <header>
+                <img src="Images/PaulGrahamLogo.jpg" alt="Picture of Paul Graham" id="headerLogo" width="120" height="120">
+                
+                <h1>Paul Graham</h1>
+                
+            </header>
+            
+            <hr style="margin:0; border: solid 1px black">
+            
+           <nav>
+                <ul>
+                    
+                    <li> <!-- Home -->
+                        <hr>
+                        <div>
+                            <a href="index.html">Home</a>
+                            <a href="index.html"><img src="Images/homeLogo.png" height="60" width="60" alt="Home Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- Books -->
+                        <div>
+                        <a href="PG_Books.html">Books</a>
+                        <a href="PG_Books.html"><img src="Images/booksLogo.png" height="60" width="55" style="position:relative; left:2%" alt="Books Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- Arc -->
+                        <div>
+                        <a href="PG_Arc.html">Arc</a>
+                        <a href="PG_Arc.html"><img src="Images/arcLogo.png" height="60" width="60" alt="Arc Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- Q and A's -->
+                        <div>
+                        <a href="PG_QandA.html">Q&amp;A's</a>
+                        <a href="PG_QandA.html"><img src="Images/qandaLogo.png" height="60" width="60" alt="Q&A Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    
+                    <li> <!-- Quotes -->
+                        <div>
+                        <a href="PG_Quotes.html">Quotes</a>
+                        <a href="PG_Quotes.html"><img src="Images/quotesLogo.png" height="60" width="60" alt="Quotes Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    
+                    <li> <!-- Spam -->
+                        <div>
+                        <a href="PG_Spam.html">Spam</a>
+                        <a href="PG_Spam.html"><img src="Images/spamLogo.png" height="60" width="60" alt="Spam Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- YC -->
+                        <div>
+                        <a href="PG_YC.html">YC</a>
+                        <a href="PG_YC.html"><img src="Images/ycLogo.png" height="60" width="60" style="position:relative; right:1%; border: 2px solid #336699" alt="Y Combinator Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+        
+                </ul>
+            </nav>
+            
+            <main>
+                
+                <h1 id="top">Stopping Spam</h1>
+                
+                <p>August 2003</p>
+                
+                <p>There are many ways to fight spam. Which works best? So far the best single solution is probably Bayesian filtering. But you don't have to choose just one. Many of the following solutions could be used in combination.
+                </p>
+                
+                <p>Index:</p>
+                <ul>
+                    <li>
+                        <a href="#ISP"> Complaining to Spammer's ISPs </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#Blacklists">Mail Server Blacklists</a>
+                    </li>
+                    
+                    <li>
+                        <a href="#Signiture"> Signiture-Based Filtering </a>
+                    </li>
+                    
+                    <li>
+                        <a href="#Bayesian">Bayesian Filtering</a>
+                    </li>
+                </ul>
+                
+                <br>
+                
+                <h3 id="ISP">Complaining to Spammers' ISPs</h3>
+                <p>
+                    <strong>Good:</strong> Raises cost of spamming.
+                    <br>
+                    <strong>Bad:</strong> Laborious.
+                    <br>
+                    <strong>Role:</strong> Partial solution, for experts.
+                </p>
+                
+                <p>This was the original spam solution. Believe it or not, complaints can have an effect. True, spammers expect to be shut down, and already have fresh accounts lined up. Constantly switching providers is just a cost of doing business. But the faster they get booted due to complaints, the greater this cost becomes.</p>
+                
+                <p>Complaining effectively is difficult. Most spammers forge the headers of their emails to disguise their origin. You have to learn to interpret headers to understand where a spam really came from.</p>
+                
+                <p>Another option is to complain to the ISP hosting the site advertised in the spam (or, if the ISP is a spam hosting service, their upstream provider). But again, it can take some effort to figure out who this is.</p>
+                
+                <a href="#top"> Back to top </a>
+                <br>
+                
+                
+                <h3 id="Blacklists">Mail Server Blacklists</h3>
+                <p>
+                    <strong>Good:</strong> Block spam right at the server.
+                    <br>
+                    <strong>Bad:</strong> Incomplete, sometimes irresponsible.
+                    <br>
+                    <strong>Role:</strong> A first pass to eliminate up to 50&amp; of spam early on.
+                </p>
+                
+                <p>Groups of volunteers maintain blacklists of mail servers either used by spammers, or that have security holes that would let spammers use them. Some ISPs subscribe to such blacklists, and automatically refuse any mail from servers on them.</p>
+                
+                <p>Blacklists have two downsides. One is that they never manage to list more than about half the servers that spam comes from. Another is that a blacklist is only as good as the people running it. Some blacklists are run by vigilantes who shoot first and ask questions later. Using the wrong blacklist could mean bouncing a lot of legitimate mail.</p>
+                
+                <p>Blacklists are useful as at the ISP level, as long as you (a) use a responsible one (if there are any) and (b) don't expect it to be more than a first cut at the problem.</p>
+                
+                <a href="#top"> Back to top </a>
+                <br>
+                
+                <h3 id="Signiture">Signiture-Based Filtering</h3>
+                <p>
+                    <strong>Good:</strong> Rarely blocks legitimate mail.
+                    <br>
+                    <strong>Bad:</strong> Catches only 50-70% of spam.
+                    <br>
+                    <strong>Role:</strong> A first-pass filer on big email services.
+                </p>
+                
+                <p>Signature-Based filters work by comparing incoming email to known spams. Brightmail does it by maintaining a network of fake email addresses. Any email sent to these addresses must be spam. So when they see the same email sent to an address they're protecting, they know they can filter it out.</p>
+                
+                <p>In order to tell whether two emails are the same, these systems calculate "signatures" for them. One way to calculate a signature for an email would be to assign a number to each character, then add up all the numbers. It would be unlikely that a different email would have exactly the same signature.</p>
+                
+                <p>The way to attack a signature-based filter is to add random stuff to each copy of a spam, to give it a distinct signature. When you see random junk in the subject line of a spam, that's why it's there-- to trick signature-based filters.</p>
+                
+                <p>The spammers have always had the upper hand in the battle against signature-based filters. As soon as the filter developers figure out how to ignore one kind of random insertion, the spammers switch to another. So signature-based filters have never had very good performance.
+                </p>
+                
+                <a href="#top"> Back to top </a>
+                
+                <br>
+                
+                <h3 id="Bayesian">Bayesian (aka Statistical) Filtering</h3>
+                <p>
+                    <strong>Good:</strong> Catch 99% to 99.9% of spam, low false positives.
+                    <br>
+                    <strong>Bad:</strong> Have to be trained.
+                    <br>
+                    <strong>Role:</strong> Best current solution for individual users.
+                </p>
+                
+                <p>Bayesian filters are the latest in spam filtering technology. They recognize spam by looking at the words (or "tokens") they contain.</p>
+                
+                <p>A Bayesian filter starts with two collections of mail, one of spam and one of legitimate mail. For every word in these emails, it calculates a spam probability based on the proportion of spam occurrences. In my own email, "Guaranteed" has a spam probability of 98%, because it occurs mostly in spam; "This" has a spam probability of 43%, because it occurs about equally in spam and legitimate mail; and "deduce" has a spam probability of only 3%, because it occurs mostly in legitimate email.
+                </p>
+                
+                <p>When a new mail arrives, the filter collects the 15 or 20 words whose spam probabilities are furthest (in either direction) from a neutral 50%, and calculates from these an overall probability that the email is a spam.</p>
+                
+                <p>Because they learn to distinguish spam from legitimate mail by looking at the actual mail sent to each user, Bayesian filters are extremely accurate, and adapt automatically as spam evolves.</p>
+                
+                <p>Bayesian filters vary in performance. As a rule you can count on filtering rates of 99%. Some, like SpamProbe, deliver filtering rates closer to 99.9%.
+                </p>
+                
+                <p>Bayesian filters are particularly good at avoiding "false positives"-- legitimate email misclassified as spam. This is because they consider evidence of innocence as well as evidence of guilt. A Bayesian filter is unlikely to reject an otherwise innocent email that happens to contain the word "sex", as a rule-based filter might.
+                </p>
+                
+                <p>The disadvantage of Bayesian filters is that they need to be trained. The user has to tell them whenever they misclassify a mail. Of course, after the filter has seen a couple hundred examples, it rarely guesses wrong, so in the long term there is little extra work involved.
+                </p>
+                
+                <p>Another disadvantage of Bayesian filters is that they're new. The technology only became widespread in 2003. Most commercial spam filters are still rule-based.
+                </p>
+                
+                <a href="#top"> Back to top </a>
+                
+                <footer>
+                    <hr>
+                        Contact Paul
+                        <div>
+                            <p><a href="https://twitter.com/paulg">Twitter</a></p>
+                        </div>
+                        <div>
+                            <p><a href="https://www.amazon.com/Paul-Graham/e/B001ILHE5O%3Fref=dbs_a_mng_rwt_scns_share">Amazon</a></p>
+                        </div>
+                        <div>
+                            <p><a href="mailto:pg@ycombinator.com">E-Mail</a></p>
+                        </div>
+                    <br>
+                    Copyright &copy; Paul Graham <br> Last Updated on 4/24/2019
+                </footer>
+            </main>
+            
+            </div>
+        </body>
+    
+</html>

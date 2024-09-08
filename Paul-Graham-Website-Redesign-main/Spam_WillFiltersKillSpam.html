@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        
+        <link rel= "stylesheet" type="text/css" href="displaysite.css" media="screen">
+        
+        <link rel= "stylesheet" type= "text/css" href="printsite.css" media="print">
+        
+        <title>Paul Graham Homepage</title>
+        
+        <link rel="icon" href="Images/PaulGrahamLogo.jpg" type="image/gif" sizes="16x16">
+        
+    </head>
+    
+        <body>
+            
+            <div id="container">
+                
+            <header>
+                <img src="Images/PaulGrahamLogo.jpg" alt="Picture of Paul Graham" id="headerLogo" width="120" height="120">
+                
+                <h1>Paul Graham</h1>
+                
+            </header>
+            
+            <hr style="margin:0; border: solid 1px black">
+            
+           <nav>
+                <ul>
+                    
+                    <li> <!-- Home -->
+                        <hr>
+                        <div>
+                            <a href="index.html">Home</a>
+                            <a href="index.html"><img src="Images/homeLogo.png" height="60" width="60" alt="Home Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- Books -->
+                        <div>
+                        <a href="PG_Books.html">Books</a>
+                        <a href="PG_Books.html"><img src="Images/booksLogo.png" height="60" width="55" style="position:relative; left:2%" alt="Books Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- Arc -->
+                        <div>
+                        <a href="PG_Arc.html">Arc</a>
+                        <a href="PG_Arc.html"><img src="Images/arcLogo.png" height="60" width="60" alt="Arc Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- Q and A's -->
+                        <div>
+                        <a href="PG_QandA.html">Q&amp;A's</a>
+                        <a href="PG_QandA.html"><img src="Images/qandaLogo.png" height="60" width="60" alt="Q&A Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    
+                    <li> <!-- Quotes -->
+                        <div>
+                        <a href="PG_Quotes.html">Quotes</a>
+                        <a href="PG_Quotes.html"><img src="Images/quotesLogo.png" height="60" width="60" alt="Quotes Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    
+                    <li> <!-- Spam -->
+                        <div>
+                        <a href="PG_Spam.html">Spam</a>
+                        <a href="PG_Spam.html"><img src="Images/spamLogo.png" height="60" width="60" alt="Spam Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- YC -->
+                        <div>
+                        <a href="PG_YC.html">YC</a>
+                        <a href="PG_YC.html"><img src="Images/ycLogo.png" height="60" width="60" style="position:relative; right:1%; border: 2px solid #336699" alt="Y Combinator Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+        
+                </ul>
+            </nav>
+            
+            <main>
+                <h1>Will Filters Kill Spam?</h1>
+                
+                <p>December 2002</p>
+                
+                <p>(This article is derived from one I wrote for the January 2003 issue of the Computer Security Journal.)</p>
+                
+                <p>I get about 45 spams a day, but only about one a week makes it into my inbox. If everyone had this much of their spam filtered out, spammers would give up sending it.</p>
+                
+                <p>Will that happen?</p>
+                
+                <p>The first generation of spam filters used rules to recognize specific spam features. Now a new generation of statistical spam filters seems to offer significantly better performance. Statistical filters look at the entire contents of each incoming email and decide whether it's spam based on its overall similarity to previous spams. This new kind of filter routinely catches over 99% of current spam with near zero false positives.</p>
+                
+                <p>The simplest statistical filter can be described in a paragraph. Users discard all their spam in a separate trash can. At intervals, a program looks through all the user's email and, for each token, calculates the ratio of spam occurrences to total occurrences. For example, if "cash" occurs in 200 of 1000 spams and 3 of 500 nonspam emails, its spam probability is
+                </p>
+                
+                <font face="courier">
+                    <xmp>
+                            (200/1000) / (3/500 + 200/1000)
+                    </xmp>
+                </font>
+                
+                <p>or .971. When a new email arrives, extract all the tokens and find the fifteen with probabilities p1...p15 furthest (in either direction) from .5. The probability that the mail is a spam is</p>
+                
+                <font face="courier">
+                    <xmp>
+                                       p1p2...p15
+                        ----------------------------------------
+                        p1p2...p15 + (1 - p1)(1 - p2)...(1 - p15)
+                    </xmp>
+                </font>
+                
+                <p>I use a cutoff of .9, but it doesn't matter too much where you put it, because most probabilities end up close to 0 or 1.</p>
+                
+                <p>In the past few months, many new statistical spam filters have appeared. There are now over 30 available. Apple has one, MSN has one, AOL is said to have one in beta, and you can be pretty sure Yahoo is working on one.</p>
+                
+                <p>Some of these filters were inspired by an article I wrote called A Plan for Spam, but two open-source statistical text classifiers (a superset of spam filtering), ifile and CRM114, have been around for years, and Apple and Microsoft have also been working on statistical filtering for a while. The reason for the sudden explosion of statistical filters is probably simply that spam grew to be enough of a problem that people started paying serious attention to it, and statistical filters are what you get when you do that.</p>
+                
+                <p>These filters don't all work exactly the same way. The algorithm described above is called a "naive Bayes classifier," because it uses a degenerate case of Bayes' Theorem to combine probabilities. Most of the new open-source filters are naive Bayesian, and so is MSN's, I suspect. Apple's filter calculates spam probabilities based on "adaptive latent semantic analysis," which as far as I can tell amounts to the same thing.
+                </p>
+                
+                <p>Regardless of how they calculate probabilities, these new statistical filters all share some important benefits:</p>
+                
+                <ol>
+                    <li><p><strong>They're very effective.</strong> Even the simplest statistical filter will catch 99% of current spam. The most effective filter I know of, Bill Yerazunis' CRM114, catches 99.8%. (Mine is lagging behind at about 99.7%.)</p></li>
+                    
+                    <li><p><strong>They generate few false positives. </strong>False positives, legitimate emails that are mistakenly treated as spam, are the bane of spam filtering. Statistical filters yield fewer false positives because they consider evidence of innocence as well as evidence of guilt. A token that occurs disproportionately often in your nonspam mail, like the name of a friend, will count as much toward decreasing the spam probability as a token like "cash" would to increasing it.</p></li>
+                    
+                    <li><p><strong>They learn.</strong> You don't have to look through piles of spam and figure out rules to identify them. Whatever's in there, the filters tend to find it. Like us, statistical filters notice that the token "cash" is sign of spam. However, they also notice that "modalities" (used in a surprisingly high proportion of Nigerian spams) and "FF0000" (html for bright red) are even better signs of spam. And as spammers change their messages or their infrastructure, the filters adapt.</p>
+                    </li>
+                    
+                    <li><p><strong> They let each user define what's spam.</strong> Although statistical filters could be used at the network level, ideally the probabilities should be calculated individually for each user. To the extent users' definitions of spam differ, their inboxes will reflect this.
+                        </p></li>
+                    
+                    <li><p><strong>They're hard to trick.</strong> There are only two ways to get past a statistical filter: use fewer bad words, or use more innocent words. Spammers can't do the latter, because the most innocent words (words related to your friends and family, your work, your interests) vary for each user. So they have to use fewer bad words. They can't use weird spellings (e.g. "Freee" instead of "Free") because filters quickly learn those. Their only option is to use vaguer and vaguer euphemisms, or simply to have some generic sounding text, and a link.</p>
+                    </li>
+                </ol>
+                
+                <p>What's going to happen as this new generation of spam filters get delivered to end-users? The most exciting possibility is that they may make spam go away.</p>
+                
+                <p>What the spammers care most about is response rate. In any kind of direct marketing, revenue is proportional to response rate. Spammers are satisfied with a much lower response rate than direct mail, because their costs are so much lower, but response rate is still the key to how much they make.</p>
+                
+                <p>Filtering hits spammers right in their center of gravity: if recipients don't see the spam, they don't respond to it. If we can filter out 95% of spam, we decrease spammers' revenues by a factor of 20. If we can filter out 99.5%, we decrease revenues by a factor of 200. Spammers' costs are low, but not that low. In an article in the Detroit Free Press, one spammer said that he charged a flat fee of $22,000 to send mail to his entire list of 250 million addresses. If filters cut response rates by a factor of 100, the average value of what he was selling would sink to $220. I doubt that would even cover his costs.</p>
+                
+                <p>Filters should at least save us from seeing most spam. But if they can decrease spammers' response rates enough, spam will no longer pay, and the spammers will actually stop sending it.</p>
+                
+                <p>Or so we hope. But there is an alarming possibility here. If email programs aren't designed right, spam might still be seen by the very people the spammers most want to reach.</p>
+                
+                <footer>
+                    <hr>
+                        Contact Paul
+                        <div>
+                            <p><a href="https://twitter.com/paulg">Twitter</a></p>
+                        </div>
+                        <div>
+                            <p><a href="https://www.amazon.com/Paul-Graham/e/B001ILHE5O%3Fref=dbs_a_mng_rwt_scns_share">Amazon</a></p>
+                        </div>
+                        <div>
+                            <p><a href="mailto:pg@ycombinator.com">E-Mail</a></p>
+                        </div>
+                    <br>
+                    Copyright &copy; Paul Graham <br> Last Updated on 4/24/2019
+                </footer>
+            </main>
+            
+            </div>
+        </body>
+    
+</html>

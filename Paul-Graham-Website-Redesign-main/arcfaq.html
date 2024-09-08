@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        
+        <link rel= "stylesheet" type="text/css" href="displaysite.css" media="screen">
+        
+        <link rel= "stylesheet" type= "text/css" href="printsite.css" media="print">
+        
+        <title>Paul Graham Homepage</title>
+        
+        <link rel="icon" href="Images/PaulGrahamLogo.jpg" type="image/gif" sizes="16x16">
+        
+        <style>
+            #listheader {
+                text-align: center;
+            }
+
+            #listitems {
+                display: inline-block;
+            }
+            
+            #listitems li {
+                margin-bottom: 5%;
+            }
+
+            #imgcenter {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        </style>
+        
+    </head>
+    
+        <body>
+            
+            <div id="container">
+                
+            <header>
+                <img src="Images/PaulGrahamLogo.jpg" alt="Picture of Paul Graham" id="headerLogo" width="120" height="120">
+                
+                <h1>Paul Graham</h1>
+            
+            </header>
+            
+            <hr style="margin:0; border: solid 1px black">
+            
+            <nav>
+                <ul>
+                    
+                    <li> <!-- Home -->
+                        <hr>
+                        <div>
+                            <a href="index.html">Home</a>
+                            <a href="index.html"><img src="Images/homeLogo.png" height="60" width="60" alt="Home Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- Books -->
+                        <div>
+                        <a href="PG_Books.html">Books</a>
+                        <a href="PG_Books.html"><img src="Images/booksLogo.png" height="60" width="55" style="position:relative; left:2%" alt="Books Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- Arc -->
+                        <div>
+                        <a href="PG_Arc.html">Arc</a>
+                        <a href="PG_Arc.html"><img src="Images/arcLogo.png" height="60" width="60" alt="Arc Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- Q and A's -->
+                        <div>
+                        <a href="PG_QandA.html">Q&amp;A's</a>
+                        <a href="PG_QandA.html"><img src="Images/qandaLogo.png" height="60" width="60" alt="Q&A Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    
+                    <li> <!-- Quotes -->
+                        <div>
+                        <a href="PG_Quotes.html">Quotes</a>
+                        <a href="PG_Quotes.html"><img src="Images/quotesLogo.png" height="60" width="60" alt="Quotes Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    
+                    <li> <!-- Spam -->
+                        <div>
+                        <a href="PG_Spam.html">Spam</a>
+                        <a href="PG_Spam.html"><img src="Images/spamLogo.png" height="60" width="60" alt="Spam Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+                    
+                    <li> <!-- YC -->
+                        <div>
+                        <a href="PG_YC.html">YC</a>
+                        <a href="PG_YC.html"><img src="Images/ycLogo.png" height="60" width="60" style="position:relative; right:1%; border: 2px solid #336699" alt="Y Combinator Logo"></a>
+                        </div>
+                        <hr>
+                    </li>
+        
+                </ul>
+            </nav>
+            
+            <main>
+                <h1>Arc FAQ</h1>
+                
+                <h3>Where do I get it?</h3>
+                
+                <a href="arclanguage.org">Arclanguage.org</a>
+                
+                <p>t would be surprising if we didn't still need to design more languages. That would amount to saying that programming language design is now a solved problem, and that the final, perfect language has now been designed. It does not seem that way to me-- not by a long shot. The number of still open questions makes my head spin.</p>
+                
+                <h3>Why is it called Arc?</h3>
+                
+                <p>The name is a reference to bottom-up programming. This means customizing the language to suit your application, yielding a program shaped like an arch, rather than a lintel. Since brevity is another aim, we lopped off the h.</p>
+                
+                <h3>Why did you keep car and cdr?</h3>
+                
+                <p>Because we couldn't think of any better alternatives. It would have been misleading to use first and rest or head and tail, because conses are fundamentally pairs; lists are one thing you can build with them, but not the only thing.
+
+                    There's no conventional name in English for the first and second halves of a pair. If you have to make up names, car and cdr are pretty good choices, because they're short and the same length and naturally composable (e.g. cadr).</p>
+                
+                <h3> Is Arc object-oriented? </h3>
+                
+                <p>The phrase "object-oriented" means a lot of things. Half are obvious, and the other half are mistakes.
+                </p>
+                
+                <p>We believe Lisp should let you define new types that are treated just like the built-in types-- just as it lets you define new functions that are treated just like the built-in functions. We don't believe that every program should consist of defining new types.</p>
+                
+                <h3>Why not use some other delimiter than parentheses?</h3>
+                
+                <p>We tried various possibilities. Square and curly brackets lose because they are less directional than parens (left and right differ in fewer pixels); left arrow and right arrow lose because they don't wrap around enough to enclose expressions longer than tokens.</p>
+                
+                <h3>Won't allowing new possibility confuse people reading code?</h3>
+                
+                <p>If you make a language terser, you necessarily have more possibilities for what an expression might mean. For example, because functions are a data type in Lisp, someone new to Lisp might complain that he can't tell whether a parameter x is a function or an integer. This is an inevitable consequence of making a language more powerful. It is up to the programmer (as it always is) to avoid using the language in a way that confuses readers.</p>
+                
+                <h3>   Why not build Arc on top of Java/Parrot/.NET?</h3>
+                
+                <p>We're trying to make something for the long term in Arc, something that will be useful to people in, say, 100 years. (If that sounds crazy, remember that we're already up to 50.) So (a) we're not in a hurry to save effort; when you're trying to make something that will last 100 years, there is plenty of time to work on it, and (b) we don't want to adhere to anything that isn't timeless, lest the whole project curl up like a bimetallic strip.</p>
+                
+                <hr>
+            
+                <footer>
+                        Contact Paul
+                        <div>
+                            <p><a href="https://twitter.com/paulg">Twitter</a></p>
+                        </div>
+                        <div>
+                            <p><a href="https://www.amazon.com/Paul-Graham/e/B001ILHE5O%3Fref=dbs_a_mng_rwt_scns_share">Amazon</a></p>
+                        </div>
+                        <div>
+                            <p><a href="mailto:pg@ycombinator.com">E-Mail</a></p>
+                        </div>
+                    
+                    Copyright &copy; Paul Graham  Last Updated on 4/24/2019
+                </footer>
+                
+                </main>
+            
+            </div>
+        </body>
+    
+</html>
